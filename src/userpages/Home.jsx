@@ -112,7 +112,7 @@ const Home = () => {
             <p className="text-gray-500 mt-1">Post your first job to get started!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 gap-6">
+          <div className="grid grid-cols-1 gap-6 max-h-[80vh] overflow-y-scroll">
             {jobs.map((job) => (
               <JobCard
                 key={job._id}

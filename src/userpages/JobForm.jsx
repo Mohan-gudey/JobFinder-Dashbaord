@@ -9,10 +9,10 @@ const JobForm = ({ job, onSubmit, onClose }) => {
     type: '',
     experience: '',
     salary: '',
-    salaryNumber: 0,
     description: '',
     tags: [],
     remote: false,
+    applyLink: '' // 👈 Add this line
   });
 
   useEffect(() => {
@@ -25,10 +25,10 @@ const JobForm = ({ job, onSubmit, onClose }) => {
         type: job.type || '',
         experience: job.experience || '',
         salary: job.salary || '',
-        salaryNumber: job.salaryNumber || 0,
         description: job.description || '',
         tags: job.tags || [],
         remote: job.remote || false,
+        applyLink: job.applyLink || '' // 👈 Add this line
       });
     }
   }, [job]);
@@ -150,17 +150,6 @@ const JobForm = ({ job, onSubmit, onClose }) => {
                   required
                 />
               </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Salary Number (for sorting)</label>
-                <input
-                  type="number"
-                  name="salaryNumber"
-                  value={formData.salaryNumber}
-                  onChange={handleChange}
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                  required
-                />
-              </div>
               <div className="flex items-center">
                 <input
                   type="checkbox"
@@ -192,6 +181,18 @@ const JobForm = ({ job, onSubmit, onClose }) => {
                 onChange={handleTagsChange}
                 className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 placeholder="e.g. content, strategy, seo, writing"
+              />
+            </div>
+            <div className="mb-4">
+              <label className="block text-sm font-medium text-gray-700 mb-1">Application Link</label>
+              <input
+                type="url"
+                name="applyLink"
+                value={formData.applyLink}
+                onChange={handleChange}
+                className="w-full px-3 py-2 border border-gray-300 rounded-md"
+                placeholder="https://company.com/apply "
+                required
               />
             </div>
 
