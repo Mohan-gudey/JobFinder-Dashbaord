@@ -12,7 +12,7 @@ const Home = () => {
   const [error, setError] = useState(null);
   const [confirmDeleteId, setConfirmDeleteId] = useState(null); // For confirmation dialog
 
-  const API_URL = 'http://localhost:5000/api/jobs';
+  const API_URL = 'https://jobfinder-backend-kh46.onrender.com/api/jobs';
 
   const fetchJobs = async () => {
     try {
