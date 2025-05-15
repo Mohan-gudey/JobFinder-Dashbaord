@@ -112,7 +112,7 @@ const Home = () => {
             <p className="text-gray-500 mt-1">Post your first job to get started!</p>
           </div>
         ) : (
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-1 gap-6">
             {jobs.map((job) => (
               <JobCard
                 key={job._id}

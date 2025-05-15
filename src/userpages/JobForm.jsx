@@ -13,8 +13,6 @@ const JobForm = ({ job, onSubmit, onClose }) => {
     description: '',
     tags: [],
     remote: false,
-    rating: 0,
-    reviews: 0,
   });
 
   useEffect(() => {
@@ -31,8 +29,6 @@ const JobForm = ({ job, onSubmit, onClose }) => {
         description: job.description || '',
         tags: job.tags || [],
         remote: job.remote || false,
-        rating: job.rating || 0,
-        reviews: job.reviews || 0,
       });
     }
   }, [job]);
@@ -184,30 +180,6 @@ const JobForm = ({ job, onSubmit, onClose }) => {
                   onChange={handleChange}
                   className="w-full px-3 py-2 border border-gray-300 rounded-md"
                   placeholder="https://example.com/logo.jpg"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Rating</label>
-                <input
-                  type="number"
-                  name="rating"
-                  value={formData.rating}
-                  onChange={handleChange}
-                  min="0"
-                  max="5"
-                  step="0.1"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
-                />
-              </div>
-              <div>
-                <label className="block text-sm font-medium text-gray-700 mb-1">Number of Reviews</label>
-                <input
-                  type="number"
-                  name="reviews"
-                  value={formData.reviews}
-                  onChange={handleChange}
-                  min="0"
-                  className="w-full px-3 py-2 border border-gray-300 rounded-md"
                 />
               </div>
             </div>
