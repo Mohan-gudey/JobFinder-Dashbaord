@@ -2,15 +2,18 @@ import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { FaHome } from 'react-icons/fa';
 import { LuLogOut } from 'react-icons/lu';
+import { FaLink } from 'react-icons/fa';
 
 const Sidebar = () => {
   const location = useLocation();
   const navigate = useNavigate();
 
   // Single set of sidebar links for all users
-  const SIDEBAR_LINKS = [
-    { id: 1, path: '/user', name: 'Dashboard', icon: FaHome },
-  ];
+const SIDEBAR_LINKS = [
+  { id: 1, path: '/user', name: 'Dashboard', icon: FaHome },
+  { id: 2, path: '/user/urls', name: 'URL', icon: FaLink },
+];
+
 
   const handleLogout = () => {
     localStorage.removeItem('isLoggedIn'); // Clear auth flag
@@ -32,8 +35,8 @@ const Sidebar = () => {
               to={link.path}
               className={`flex items-center justify-center md:justify-start py-3 px-5 rounded-md transition-colors ${
                 location.pathname === link.path
-                  ? 'bg-gray-100/50 text-black'
-                  : 'hover:bg-white hover:text-blue-500'
+                  ? 'bg-white text-blue-500 hover:bg-gray-100/50 hover:text-black'
+                  : 'hover:bg-gray-100/50 hover:text-black'
               }`}
             >
               <span className="mr-3">{<link.icon />}</span>

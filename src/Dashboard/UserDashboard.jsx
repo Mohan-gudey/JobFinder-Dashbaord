@@ -2,6 +2,7 @@ import React from 'react'
 import { Routes,Route } from 'react-router-dom'
 import Layout from '../components/Layout'
 import Home from '../userpages/Home'
+import URLsPage from '../userpages/UrlsPage'
 
 function UserDashboard() {
   return (
@@ -9,6 +10,7 @@ function UserDashboard() {
     <Routes>
       <Route path='/' element={<Layout/>}>
         <Route index element={<Home/>}/>
+        <Route path="/urls" element={<URLsPage />} />
       </Route>
     </Routes>
   )
